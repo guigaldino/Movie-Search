@@ -8,7 +8,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background-color: #060D17;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #1C1C1C;
+    background-color: #060D17;;
     color: white;
     padding: 10px 0;
     display: flex;
@@ -27,6 +27,7 @@ header {
 .title {
     font-size: 30px;
     color: #EBBC00;
+    font-weight: 600;
 }
 
 .card-pesquisa {
@@ -77,6 +78,12 @@ header {
     background-color: #EBBC00;
     color: black;
     border-color: #968232;
+}
+
+.card-resultado{
+    background-color: #142a483e;
+    border: 1px solid #EBBC00;
+    padding: 20px;
 }
 
 .card-body {
