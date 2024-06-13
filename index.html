@@ -15,19 +15,26 @@
 </head>
 
 <body>
-
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="card p-4 shadow-sm w-100" id="search-card" style="max-width: 600px;">
-            <div class="card-body">
-                <h5 class="card-title text-center">Pesquisa de Filmes</h5>
-                <div class="input-group my-3">
-                    <input type="text" id="search-bar" class="form-control" placeholder="Digite o nome do filme">
-                    <div class="input-group-append">
-                        <button id="search-button" class="btn btn-primary">Buscar</button>
+    <header>
+        <h1 class="title">Pesquisa de Filmes</h1>
+    </header>
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="card-pesquisa p-3">
+                    <div class="input-group mb-3">
+                        <input type="text" id="inputPesquisar" class="form-control input-pesquisa"
+                            placeholder="Digite o nome do filme">
+                        <button id="buttonPesquisar" class="btn btn-primary button-pesquisa"><i class="bi bi-search"></i></button>
                     </div>
                 </div>
-                <div id="movie-details" class="mt-4"></div>
-                <div id="streaming-availability" class="mt-4"></div>
+
+                <div id="result-card" class="card mx-auto" style="max-width: 800px;">
+                    <div class="card-body">
+                        <div id="movie-details"></div>
+                        <div id="streaming-availability"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
