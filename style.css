@@ -93,3 +93,7 @@ header {
     padding: 20px;
     margin-top: 20px;
 }
+
+.info-filmes{
+    border-bottom: 1px solid #EBBC00;
+}
