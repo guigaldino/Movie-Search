@@ -3,6 +3,7 @@ let campoPesquisar = $("#inputPesquisar");
 let botaoPesquisar = $("#buttonPesquisar");
 let cardResultado = $("#cardResultado");
 let infoFilmes = $("#infoFilmes");
+let posterContainer = $("#posterContainer")
 let disponibilidadeStreaming = $("#disponibilidadeStreaming");
 
 // EVENTOS
@@ -18,6 +19,7 @@ botaoPesquisar.click(function () {
 async function pesquisar() {
     let filmePesquisado = campoPesquisar.val();
     let pesquisarFilme = await apiPesquisarFilme(filmePesquisado)
+    console.log(pesquisarFilme)
     inserirInformacoes(pesquisarFilme)
 }
 
@@ -26,7 +28,7 @@ function inserirInformacoes(array){
     imgUrl = imgUrl.replace(/^["'](.+(?=["']$))["']$/, '$1')
     console.log(imgUrl)
     let poster = $("<img>").attr('src', imgUrl)
-    infoFilmes.append(poster)
+    posterContainer.append(poster)
 }
 
 async function apiPesquisarFilme(titulo) {

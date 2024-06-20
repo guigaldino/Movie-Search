@@ -97,3 +97,7 @@ header {
 .info-filmes{
     border-bottom: 1px solid #EBBC00;
 }
+
+.poster-container{
+    border-right: 1px solid #EBBC00;
+}
