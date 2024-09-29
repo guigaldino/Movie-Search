@@ -16,35 +16,34 @@
 
 <body>
     <header>
-        <h1 class="title">Pesquisa de Filmes <span class="icon-header"><i class="bi bi-camera-reels"></i></span></h1>
-        
+        <h1 class="title">Pesquisa de Filmes</h1>
+        <nav class="menu">
+            <ul class="menu-list">
+                <li class="menu-item"><a href="#" class="menu-link">Pesquisa</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Em Cartaz</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Sobre Nós</a></li>
+            </ul>
+        </nav>
     </header>
     <div class="container my-4">
+
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <div class="card-pesquisa p-3">
-                    <div class="input-group mb-3">
-                        <input type="text" id="inputPesquisar" class="form-control input-pesquisa"
-                            placeholder="Digite o nome do filme">
-                        <button id="buttonPesquisar" class="btn btn-primary button-pesquisa"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-
-                <div id="cardResultado" class="card mx-auto card-resultado" style="max-width: 800px;">
-                    <div class="card-body">
-                        <div class="info-filmes" id="infoFilmes">
-                            <div class="row">
-                                <div id="posterContainer" class="poster-container col-4"></div>
-                                <div class="col-8">skdjskdjskdjskdjskdjskjdskdjs</div>
-                            </div>
-                        </div>
-                        <div id="disponibilidadeStreaming"></div>
-                    </div>
-                </div>
-
+            <div class="col-6 mb-5 mt-2 containerPesquisar">
+                <input type="text" class="form-control input-pesquisar" id="inputPesquisar"
+                    placeholder="Digite aqui o filme que procura...">
+                <button id="btnPesquisar" type="button" class="btn btn-warning"><i class="bi bi-search"></i></button>
             </div>
         </div>
+
+        <div class="row justify-content-center">
+            <div class="col-10 filme-container">
+            </div>
+        </div>
+
+
     </div>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -8,7 +8,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #060D17;
+    background-color: #2d2d2d;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -16,88 +16,87 @@ body {
 }
 
 header {
-    background-color: #060D17;;
-    color: white;
+    color: #ffcc00;
+    background-color: #3a3a3a;
     padding: 10px 0;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #ffcc00;
 }
 
 .title {
     font-size: 30px;
-    color: #EBBC00;
+    /* color: #fff; */
     font-weight: 600;
 }
 
-.card-pesquisa {
-    margin-bottom: 30px;
+.menu {
+    background-color: #333;
+    /* cor de fundo do menu */
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+}
+
+.menu-item {
+    margin-right: 20px;
+}
+
+.menu-link {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.menu-link:hover {
+    color: #fff;
+    /* cor branca para hover */
+}
+
+.menu-link:active {
+    color: #ffcc00;
+    /* cor amarela para active */
+}
+
+.containerPesquisar {
+    display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.input-group {
+.input-pesquisar {
+    color: #333333;
+    background-color: #f0f0f0;
+    border: 1px solid #c0c0c0;
+    margin-right: 5px;
+}
+
+.input-pesquisar:active {
+    outline: none;
+}
+
+.search-icon {
+    background-color: #ffcc00;
+    color: #fff;
+    border-color: #333;
+}
+
+.search-icon:hover {
+    background-color: #d7ac02;
+    cursor: pointer;
+}
+
+.filme-container {
     display: flex;
-    width: 100%;
-}
-
-.input-group .form-control {
-    flex: 1;
-}
-
-.input-group .btn {
-    margin-left: 10px;
-}
-
-.input-pesquisa{
-    background-color: transparent;
-    color: #968232;
-    border-color: #968232;
-}
-
-.input-pesquisa::placeholder{
-    color: #EBBC00;
-}
-
-.input-pesquisa:focus {
-    background-color: transparent;
-    color: #EBBC00;
-    border-color: #968232;
-    box-shadow: none;
-}
-
-.button-pesquisa{
-    background-color: transparent;
-    color: #EBBC00;
-    border-color: #968232;
-}
-
-.button-pesquisa:hover{
-    background-color: #EBBC00;
-    color: black;
-    border-color: #968232;
-}
-
-.card-resultado{
-    background-color: #142a483e;
-    border: 1px solid #EBBC00;
-    padding: 20px;
-}
-
-.card-body {
-    background-color: white;
+    justify-content: center;
+    border: 1px solid #d7ac02;
+    background-color: #3a3a3a;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.info-filmes{
-    border-bottom: 1px solid #EBBC00;
-}
-
-.poster-container{
-    border-right: 1px solid #EBBC00;
 }
