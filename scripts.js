@@ -1,49 +1,56 @@
 // VARIÁVEIS
-let campoPesquisar = $("#inputPesquisar");
-let botaoPesquisar = $("#buttonPesquisar");
-let cardResultado = $("#cardResultado");
-let infoFilmes = $("#infoFilmes");
-let posterContainer = $("#posterContainer")
-let disponibilidadeStreaming = $("#disponibilidadeStreaming");
+
+const token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMjc1ZTc3MTJjYjBlZDZiNjA0OGQ4NzNhZjU0Y2I1OSIsIm5iZiI6MTcyODAwOTQxNS4zNjM0NjIsInN1YiI6IjY2NmFmYjM1Njc2NmYwM2IyOWE3OWZjNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fk0CeMyOgJLoRE66PiYDrYtlTc6mPGr5QCo3tkYODvo";
+
+let campoPesquisa = $("#inputPesquisar");
+let btnPesquisar = $("#btnPesquisar");
+
 
 // EVENTOS
-botaoPesquisar.click(function () {
-    if (campoPesquisar.val() === '') {
-        alert("Digite algo");
-    } else {
-        pesquisar();
-    }
+btnPesquisar.click(function () {
+    pesquisarFilme();
 });
 
+
 // FUNÇÕES
-async function pesquisar() {
-    let filmePesquisado = campoPesquisar.val();
-    let pesquisarFilme = await apiPesquisarFilme(filmePesquisado)
-    console.log(pesquisarFilme)
-    inserirInformacoes(pesquisarFilme)
+async function pesquisarFilme() {
+    let nomeFilme = campoPesquisa.val();
+    if (nomeFilme == "") {
+        alert("Digite o nome de um filme para pesquisar.");
+        return;
+    }
+    await ApiPesquisarFilme(nomeFilme);
 }
 
-function inserirInformacoes(array){
-    let imgUrl = array.Poster
-    imgUrl = imgUrl.replace(/^["'](.+(?=["']$))["']$/, '$1')
-    console.log(imgUrl)
-    let poster = $("<img>").attr('src', imgUrl)
-    posterContainer.append(poster)
-}
 
-async function apiPesquisarFilme(titulo) {
-    var raw = "";
+// REQUISIÇÕES
+async function ApiPesquisarFilme(nomeFilme) {
 
-    var requestOptions = {
+    const apiUrl = `https://api.themoviedb.org/3/search/movie?query=${nomeFilme}&include_adult=&language=&page=2&year=`;
+
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+
+    const requestOptions = {
         method: 'GET',
+        headers: myHeaders,
         redirect: 'follow'
     };
 
     try {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=85cb41f0&t=${titulo}`, requestOptions);
-        const result = await response.json();
-        return result;
+        const response = await fetch(apiUrl, requestOptions);
+        if (!response.ok) {
+            throw new Error("Erro em pesquisaFilme(). ERRO HTTP: " + response.status);
+        }
+        const result = await response.text();
+        console.log(result);
     } catch (error) {
-        alert('error', error);
+        alert("Erro ao pesquisar filme. Detalhes: " + error);
+        console.error('error', error);
     }
 }
+
+
+
+
+
