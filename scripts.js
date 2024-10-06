@@ -4,6 +4,7 @@ const token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMjc1ZTc3MTJjYjBlZDZiNjA0O
 
 let campoPesquisa = $("#inputPesquisar");
 let btnPesquisar = $("#btnPesquisar");
+let filmeContainer = $("#filmeContainer");
 
 
 // EVENTOS
@@ -20,6 +21,11 @@ async function pesquisarFilme() {
         return;
     }
     await ApiPesquisarFilme(nomeFilme);
+}
+
+// DataTables
+function criarDataTable() {
+    
 }
 
 
